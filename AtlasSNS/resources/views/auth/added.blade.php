@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <div id="clear">
   <p>〇〇さん</p>
   <p>ようこそ！AtlasSNSへ！</p>

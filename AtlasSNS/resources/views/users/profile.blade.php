@@ -2,6 +2,6 @@
 
 @section('content')
 
-
+あ
 
 @endsection
