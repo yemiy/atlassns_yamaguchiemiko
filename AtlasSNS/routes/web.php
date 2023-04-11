@@ -30,11 +30,25 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
+Route::get('/logout','Auth\LoginController@logout');
+//Route::post('/logout', 'Auth\LoginController@logout');
+
+//つぶやきの登録
+
+
+Route::get('/home','PostsController@createForm');
+Route::post('/home','PostsController@create');
+
+
+
 Route::get('/top','PostsController@index');
 
 Route::get('/profile','UsersController@profile');
+route::post('/profile,update','UsersController@profileup');
 
-Route::get('/search','UsersController@index');
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+Route::get('/search','UsersController@index')->name('users.index');
+Route::post('/search','UsersController@search')->name('users.search');
+
+Route::get('/follow-list','FollowsController@followList');
+Route::get('/follower-list','FollowsController@followerList');
