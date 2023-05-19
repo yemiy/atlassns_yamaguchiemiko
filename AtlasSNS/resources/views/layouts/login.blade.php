@@ -1,4 +1,7 @@
+@extends('layouts.login')
+
 @section('content')
+
 
 
 
@@ -33,7 +36,7 @@
 
 
                 <div id="my-user">
-                    <p> さん<img src="images/icon1.png" height="35"  ></p>
+                    <p> <?php;?>さん<img src="images/icon1.png" height="35"  ></p>
                 <div>
 
                     <details>
