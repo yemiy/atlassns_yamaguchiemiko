@@ -4,6 +4,7 @@
 
 {!! Form::open() !!}
 @csrf
+
 <p>AtlasSNSへようこそ</p>
 
 {{ Form::label('e-mail') }}

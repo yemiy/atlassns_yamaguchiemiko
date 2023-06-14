@@ -18,25 +18,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-<form action="/search" method="get">
+<form action="/search" method="post">
 @csrf
 <input type="text" name="keyword" placeholder="ユーザー名" >
 <input type="submit"  value="検索">
+@if(!empty($keyword))
+<div class="search-word">
+{{$keyword}}
+</div>
+@endif
 </form>
 
- <table class='search list'>
-@if(!empty($users))
-@foreach ($users as $user)
-@csrf
-<tr>
-<td><img src="images/icon2.png"  height="30px">
-<td>{{ $user->username }}</td></a>
+@foreach ($users as $users)
+<div>
+@if()
+<tr><td><img src="images/icon2.png"  height="30px">
+<td>{{ $users->username }}</td>
 </td></tr>
 
+</div>
 @endforeach
-</table>
 @endif
-</body>
 </html>
 @endsection

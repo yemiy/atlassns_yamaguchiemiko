@@ -47,7 +47,7 @@ Route::get('/profile','UsersController@profile');
 route::post('/profile,update','UsersController@profileup');
 
 
-Route::get('/search','UsersController@index')->name('users.index');
+Route::get('/search','UsersController@search')->name('search');
 Route::post('/search','UsersController@search')->name('users.search');
 
 Route::get('/follow-list','FollowsController@followList');

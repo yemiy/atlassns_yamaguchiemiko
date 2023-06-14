@@ -1,9 +1,6 @@
-@extends('layouts.login')
-
-@section('content')
 
 
-@csrf
+
 
 
 
@@ -36,7 +33,8 @@
 
 
                 <div id="my-user">
-                    <p> <?php;?>さん<img src="images/icon1.png" height="35"  ></p>
+                   <p class="accordion-title js-accordion-title">
+{{ Auth::user()->username}}さん<img src="images/icon1.png"></p>
                 <div>
 
                     <details>
@@ -55,7 +53,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>

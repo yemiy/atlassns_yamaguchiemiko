@@ -21,27 +21,19 @@ public function profiledit(Request $request){
  $icon=$request->input('icon');
  return redirect('/top');
 }
-
+/*
 public function index(){
      //   return view('users.search');
  $users = \DB::table('users')->get();
  return view('users.search',['users'=>$users]);
 }
-
+*/
 
 public function search(Request $request){
- $keyword= $request -> input('keyword') ;
-$query=User::query();
 
- if(!empty($keyword)){
-
-$query->where('username','like','%' .$keyword. '%');
-
-
-
- }
-
- return view('users.search',compact('users','keyword'));
+ $users = \DB::table('users')->get();
+$keyword=$request->input('keyword');
+return view('users.search',['users'=>$users, 'keyword'=>$keyword]);
 
 }
 
