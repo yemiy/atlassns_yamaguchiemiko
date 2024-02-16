@@ -23,7 +23,7 @@
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@register');
+Route::get('/register', 'Auth\RegisterController@registerView')->name('register');
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
@@ -33,15 +33,18 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::get('/logout','Auth\LoginController@logout');
 //Route::post('/logout', 'Auth\LoginController@logout');
 
-//つぶやきの登録
-
-
-Route::get('/home','PostsController@createForm');
-Route::post('/home','PostsController@create');
-
-
-
+//TOPページ表示
 Route::get('/top','PostsController@index');
+
+//つぶやきの登録
+//Route::get('/top','PostsController@create');
+Route::post('/create','PostsController@create');
+
+//つぶやき削除
+Route::get('/post/{id}/delete','PostsController@delete');
+
+//つぶやき編集
+Route::post('/post/update','PostsController@update');
 
 Route::get('/profile','UsersController@profile');
 route::post('/profile,update','UsersController@profileup');
@@ -50,5 +53,16 @@ route::post('/profile,update','UsersController@profileup');
 Route::get('/search','UsersController@search')->name('search');
 Route::post('/search','UsersController@search')->name('users.search');
 
+//フォロー、フォロワー数の表示
+//Route::get('/top','FollowsController@show');
+
+
+
 Route::get('/follow-list','FollowsController@followList');
 Route::get('/follower-list','FollowsController@followerList');
+
+//フォロー機能
+Route::get('users/')
+Route::post('/user/{users}/follow','FollowsController@follow')->name('follow');
+//フォロー解除機能
+Route::delete('/user/{users}/unfollow','FollowsController@unfollow')->name('unfollow');
