@@ -1,23 +1,33 @@
 @extends('layouts.logout')
-
 @section('content')
 
+<div class="login-page">
 {!! Form::open() !!}
+
+
+<div class="log-title">AtlasSNSへようこそ</div>
+
 @csrf
+   <div class="form-group mb-3">
+      <label for="e-mail"> メールアドレス</label>
+      <input type="text" name="mail">
+    </div><br><br>
 
-<p>AtlasSNSへようこそ</p>
+     <div class="form-group mb-3">
+      <label for="subject"> パスワード </label>
+      <input type="password" name="password" >
+    </div><br>
 
-{{ Form::label('e-mail') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-{{ Form::label('password') }}
-{{ Form::password('password',['class' => 'input']) }}
-
-{{ Form::submit('ログイン') }}
+    <div class="log-ok">
+     <button type="submit" class="">ログイン</button>
+     </div><br><br>
 
 
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+
+
+<div class="log-plus"><a href="/register">新規ユーザーの方はこちら</a></div>
 
 {!! Form::close() !!}
-
+</div>
 @endsection

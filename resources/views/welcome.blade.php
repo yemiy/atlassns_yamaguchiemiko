@@ -66,14 +66,16 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            @if {{ !! Form::open(['url=>'/login']) !! }}
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ !!Form::open(['url'=>'/home'])!! }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ !! Form::open([
+                            'url'=>'/login']) !! }}">Login</a>
+                        <a href="{{ !! Form::open(['url'=>'/register']) !! }}">Register</a>
                     @endauth
+                    {{ !! Form::close() !!}}
                 </div>
             @endif
 

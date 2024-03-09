@@ -7,28 +7,33 @@ body {}
 /* header */
 header {
     background: #186AC9;
+    height: 100px;
 }
 
-
-
-#my-user {
-    text-align: right;
+header h1 {
+    padding-top: 30px;
+    padding-left: 25px;
 }
+
 
 /* main content */
-
 .btn {
     color: #fff;
     background-color: #0000ff;
     width: 150px;
     height: 40px;
     text-align: center;
-
-    font-size: 15px;
-
+    font-size: 17px;
     border-radius: 5px 5px 5px 5px;
 }
 
+.btn-followed {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+    border-color: rgb(247, 191, 158);
+}
 
 #row {
     display: flex;
@@ -41,9 +46,593 @@ header {
 
 #side-bar {
     flex: 0 0 19%;
-    border-left: 1px solid #727272;
+    border-left: 3px solid #727272;
 }
 
 details {
     text-align: right;
+}
+
+#row p {
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.line {
+    border-top: solid 0.5px;
+    border-left: 0.1px solid;
+    height: 355px;
+}
+
+.row-btn {
+    color: #fff;
+    background-color: #1877f2;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 25px;
+    margin-left: 150px;
+}
+
+.row-btn2 {
+    color: #fff;
+    background-color: #1877f2;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 25px;
+    margin-left: 80px;
+}
+
+
+/*投稿機能*/
+.post-form {
+    position: relative;
+    height: 150px;
+}
+
+.post-form img {
+    position: absolute;
+    left: 7%;
+    margin-top: 30px;
+}
+
+.post-form button {
+    background: transparent;
+    border: none;
+}
+
+.post-form input {
+    width: 75%;
+    height: 80px;
+    border: none;
+    position: absolute;
+    left: 13%;
+    top: 16px;
+}
+
+.post-form input::placeholder {
+    font-size: 19px;
+    color: #dcdcdc;
+    font-family: sans-serif;
+}
+
+.btn-post img {
+    position: absolute;
+    left: 80%;
+    border-radius: 12%;
+    height: 48px;
+    width: 48px;
+    top: 50px;
+}
+
+hr {
+    border-top: 8px solid #d3d3d3;
+}
+
+
+.table-hover {
+    padding: 0 20px;
+}
+
+.icon2 {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 10%;
+}
+
+.article-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+
+.article-title {
+    position: absolute;
+    left: 14%;
+    font-size: 18px;
+}
+
+.article-post {
+    position: absolute;
+    left: 16%;
+    padding: 25 10px;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.article-day {
+    position: absolute;
+    left: 65%;
+    font-size: 12px;
+}
+
+.index-post icon {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+}
+
+.contents img {
+    height: 35px;
+    width: 30px;
+}
+
+/*投稿編集ボタン*/
+.t-icon {
+    margin-left: auto;
+    display: flex;
+}
+
+.js-modal-open {
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+/*投稿削除ボタン*/
+.k-icon img {
+    margin-top: 30px;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: block;
+    transition: 0.3s;
+}
+
+.k-icon:active img:nth-of-type(2) {
+    opacity: 0;
+}
+
+
+/* 削除ボタン */
+.btn-danger {
+    display: block;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    display: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 20%;
+}
+
+.btn-danger img {
+    position: center;
+    width: 20px;
+    height: 20px;
+}
+
+/*投稿編集モーダル中身*/
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7777;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.modal__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6666;
+    display: none;
+    width: 100%;
+    height: 120%;
+
+}
+
+/*モーダルの全体サイズ*/
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    top: 50%;
+    width: 60%;
+    border-radius: 2%;
+}
+
+/*モーダル内テキストエリア*/
+.modal textarea {
+    width: 800px;
+    height: 215px;
+}
+
+/*プロフィール編集*/
+.form-group {
+    position: relative;
+    top: 15px;
+    left: 250px;
+}
+
+.form-group label {
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+}
+
+.form-group input {
+    resize: vertical;
+}
+
+.form-group btn {
+    text-align: right;
+    display: block;
+}
+
+.form-group img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+}
+
+.profile-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    left: 20%;
+    top: 75px;
+    display: flex;
+    position: relative;
+}
+
+.form-group3 {
+    position: relative;
+}
+
+.form-group3 label {
+    display: inline-block;
+    text-align: left;
+    font-size: 21px;
+    font-weight: 300;
+    padding: 10px 150px 30px 100px;
+    white-space: nowrap;
+}
+
+.form-group3 input {
+    display: inline-block;
+    text-align: left;
+    width: 335px;
+    height: 35px;
+    background: #f5f5f5;
+    border-width: 1px;
+    font-size: 15px;
+}
+
+.form-group-btn {
+    display: flex;
+    position: relative;
+    left: 35%;
+}
+
+/*アイコン・アコーディオン*/
+.accordion {
+    position: relative;
+    display: flex;
+    left: 80%;
+    bottom: 50px;
+}
+
+.accordion-container {
+    display: flex;
+    position: absolute;
+    border-top: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+.accordion img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    vertical-align: middle;
+    margin-left: 200px;
+}
+
+.accordion-content {
+    display: none;
+    padding: 40px 5px 0 0;
+}
+
+.accordion-content li {
+    line-height: 1.5;
+    position: relative;
+    border: 1px solid #333;
+    width: 315px;
+    height: 90px;
+    background-color: #fff;
+    font-family: monospace;
+}
+
+.accordion-content a {
+    font-size: 30px;
+    color: #a9a9a9;
+    text-align: center;
+    display: block;
+    padding-top: 20px;
+
+}
+
+.accordion-content li:hover {
+    background-color: #000088;
+    color: #fff;
+}
+
+.accordion-content a:hover {
+    color: #fff;
+}
+
+/* コンテンツボックスの枠線
+.accordion-item:nth-of-type .accordion-content {
+    border-bottom: 2px solid #7f7fff;
+    border-left: 2px solid #7f7fff;
+    border-right: 2px solid #7f7fff;
+}
+*/
+/* 矢印 */
+
+
+.accordion-title {
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+
+}
+
+.accordion-title p {
+    margin-top: 12px;
+    display: flex;
+}
+
+.accordion-title::after {
+    border-right: solid 3px #fff;
+    border-top: solid 3px #fff;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transform: rotate(135deg);
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+    width: 12px;
+    height: 12px;
+    left: 160px;
+}
+
+.accordion-title.open::after {
+    top: 45%;
+    transform: rotate(-45deg);
+}
+
+.my-user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+/*フォローリストページ*/
+.follows-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: block;
+}
+
+/*↑投稿ページアイコン・*/
+.follow-list {
+    display: flex;
+    flex-flow: row wrap;
+    vertical-align: middle;
+}
+
+.follows-icon9 {
+    margin-left: 93px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: block;
+}
+
+.follow-list2 {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.follow-list p {
+    margin: 85px 10px;
+    vertical-align: middle;
+}
+
+.follow-list h1 {
+    font-family: sans-serif;
+    font-size: 25px;
+    padding: 35px 95px;
+}
+
+.follows-icon-f {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: block;
+}
+
+.article-title1 {
+    position: absolute;
+    left: 14%;
+    font-size: 17px;
+    margin-top: 3px;
+}
+
+.article-post1 {
+    position: absolute;
+    left: 14%;
+    padding: 25 10px;
+    margin-top: 35px;
+    font-size: 15px;
+}
+
+/*他ユーザープロフィール*/
+.follow-list-pro {
+    display: flex;
+    flex-flow: row wrap;
+    height: 148px;
+}
+
+.follows-icon-p {
+    margin-left: 100px;
+    margin-top: 10px;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    display: block;
+}
+
+.pro {
+    flex-wrap: wrap;
+    margin-top: 12px;
+    margin-left: 7px;
+}
+
+.pro p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.pro form {
+    position: absolute;
+    left: 65%;
+    font-size: 12px;
+    top: 185px;
+}
+
+/*ユーザー検索ページ*/
+
+.search-y {
+    padding: 45px 0;
+}
+
+.search-y input {
+    margin: 0 10px 3px 90px;
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    border-width: 2px;
+    border-radius: 3px;
+}
+
+.search-y button {
+    border: none;
+    background: none;
+}
+
+.search-y img {
+    width: 45px;
+    height: 45px;
+    border-radius: 3px;
+    top: 20%;
+    position: absolute;
+}
+
+.keyword {
+    display: inline;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.icon_header1 {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 30px 250px 0 250px;
+}
+
+/*ユーザー一覧アイコン*/
+.icon_header {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 35px 250px 38px 350px
+}
+
+.search_user_name {
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 16px;
+    padding-left: 28px;
+}
+
+.icon-space {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: block;
+}
+
+.search-follow-btn {
+    position: absolute;
+    left: 48%;
+}
+
+/*解除ボタン*/
+.btn-danger2 {
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    font-size: 17px;
+}
+
+
+.btn-primary {
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    font-size: 17px;
 }
