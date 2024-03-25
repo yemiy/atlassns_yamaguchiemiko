@@ -15,10 +15,12 @@ public function __construct(){
 
 //投稿表示
 public function index(){
+    $users=Auth::user();
 $posts=Post::where('user_id', \Auth::user()->id)->get();
-return view('posts.index',['posts'=>$posts]);
+return view('posts.index',['posts'=>$posts,'users'=>$users]);
 
 }
+
 
 //投稿登録機能
  public function create(Request $request){

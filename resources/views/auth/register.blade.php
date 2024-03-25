@@ -23,10 +23,10 @@
 {{ Form::text('mail',null,['class' => 'input']) }}</p>
 
 <p>{{ Form::label('パスワード') }}<br>
-{{ Form::text('password',null,['class' => 'input']) }}</p>
+{{ Form::password('password',null,['class' => 'input']) }}</p>
 
 <p>{{ Form::label('パスワード確認') }}<br>
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}</p>
+{{ Form::password('password_confirmation',null,['class' => 'input']) }}</p>
 
 
    <div class="log-ok2">

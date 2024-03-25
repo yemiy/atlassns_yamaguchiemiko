@@ -26,13 +26,15 @@
 
 <header>
 <div id="head">
-     <h1><a href="/top"><img src="   {{ asset('/images/atlas.png') }}" height="42"></a></h1> </div>
+     <h1><a href="/top"><img src=" {{ asset('/images/atlas.png') }}" height="42"></a></h1> </div>
+
 
 <div class="accordion">
   <div class="accordion-container">
     <div class="accordion-item">
 
-       <div class="accordion-title js-accordion-title"><p>{{ Auth::user()->username}}　さん</p><img src="{{ asset('images/'.Auth::user()->images) }}" class="icon3" ></div>
+       <div class="accordion-title js-accordion-title"><p>{{ Auth::user()->username}}　さん</p>
+       <img src="{{ asset('images/'.Auth::user()->images) }}" class="icon3" ></div>
 
 
       <div class="accordion-content">
@@ -60,10 +62,10 @@
                 {{ Auth::user()->follower()->count() }}名</p>
                 <div class="row-btn"><a href="/follower-list" ><span style="color:white">フォロワーリスト</span></a></div>
             </div><br>
+    <div class="line"></div>
 
-            <div class="line">
             <div class="row-btn2"><a href="/search"><span style="color:white">ユーザー検索</span></a></div>
-                 </div>
+
         </div>
     </div>
 

@@ -38,6 +38,7 @@ header h1 {
 #row {
     display: flex;
     flex-flow: row wrap;
+    height: 1000px;
 }
 
 #container {
@@ -47,6 +48,7 @@ header h1 {
 #side-bar {
     flex: 0 0 19%;
     border-left: 3px solid #727272;
+    height: 100%;
 }
 
 details {
@@ -61,7 +63,6 @@ details {
 .line {
     border-top: solid 0.5px;
     border-left: 0.1px solid;
-    height: 355px;
 }
 
 .row-btn {

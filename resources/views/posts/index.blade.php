@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 <div class="post-form">
 {!! Form::open(['url'=>'/create','method'=>'Post']) !!}
 

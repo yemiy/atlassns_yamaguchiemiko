@@ -73,7 +73,6 @@ User::create([
 'username'=>$username,
 'mail'=>$mail,
 'password'=>bcrypt($password),
-
 ]);
 
 $input =$request->session()->put('username',$username);
