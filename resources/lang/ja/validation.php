@@ -40,7 +40,7 @@ return [
     'digits_between'       => ':attributeは、:min桁から:max桁にしてください。',
     'dimensions'           => ':attributeの画像サイズが無効です',
     'distinct'             => ':attributeの値が重複しています。',
-    'email'                => ':attributeは、有効なメールアドレス形式で指定してください。',
+    'email'                => '有効なメールアドレス形式で指定してください。',
     'ends_with'            => 'The :attribute must end with one of the following: :values',
     'exists'               => '選択された:attributeは、有効ではありません。',
     'file'                 => ':attributeはファイルでなければいけません。',

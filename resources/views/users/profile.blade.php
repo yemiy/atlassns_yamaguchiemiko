@@ -18,32 +18,50 @@
     <div class="form-group mb-3">
       <label for="subject"> user name </label>
       <input type="text" name="username" value="{{ Auth::user()->username}}">
+      @if($errors->any())
+ <p class="error-mg">{{ $errors->first('username' )}}</p>
+@endif
     </div><br>
 
     <div class="form-group mb-3">
       <label for="subject"> メールアドレス</label>
       <input type="text" name="mail" value="{{ Auth::user()->mail}}">
+            @if($errors->any())
+ <p class="error-mg">{{ $errors->first('mail' )}}</p>
+@endif
     </div><br>
 
      <div class="form-group mb-3">
       <label for="subject"> パスワード </label>
       <input type="password" name="password" value="">
+            @if($errors->any())
+ <p class="error-mg">{{ $errors->first('password' )}}</p>
+@endif
     </div><br>
 
     <div class="form-group mb-3">
       <label for="subject">パスワード
         （確認）</label>
       <input type="password" name="password_confirmation" value="">
+            @if($errors->any())
+ <p class="error-mg">{{ $errors->first('password_confirmation' )}}</p>
+@endif
     </div><br>
 
      <div class="form-group mb-3">
       <label for="subject"> bio </label>
       <input type="text" name="bio" value="{{ Auth::user()->bio}}">
+            @if($errors->any())
+ <p class="error-mg">{{ $errors->first('bio' )}}</p>
+@endif
     </div><br>
 
     <div class="form-group mb-3">
       <label for="subject"> icon image </label>
       <input type="file" name="images" value="">
+            @if($errors->any())
+ <p class="error-mg">{{ $errors->first('file' )}}</p>
+@endif
     </div>
     <br>
 @if (isset($imageName))
@@ -57,7 +75,7 @@
 </div>
 
 
-
+<!--
 
 <div class="">
 @if($errors->any())
@@ -67,6 +85,6 @@
 @endforeach
 
 @endif
-</div>
+</div>-->
 
 @endsection
