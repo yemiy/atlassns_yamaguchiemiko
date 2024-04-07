@@ -5,11 +5,12 @@
 <div class="follow-list">
 <h1>Follow List</h1>
 <!--フォロワーのアイコン表示-->
-@foreach($images as $images)
-@if($images->id !==Auth::user()->id)
-<p><img src="{{ asset('images/' .$images->images )}}" class="follows-icon-f"></p>
-@endif
+@foreach($users as $user)
+<p>
+<a href=" {{ route('followProfile',['id' =>$user->id])}}"> <img src="{{ asset('images/' .$user->images) }}" class="follows-icon-f"></a></p>
+
 @endforeach
+
 </div>
 <hr class="hr1">
 

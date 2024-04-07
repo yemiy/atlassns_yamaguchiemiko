@@ -31,7 +31,7 @@ return [
         'array'   => ':attributeの項目は、:min個から:max個にしてください。',
     ],
     'boolean'              => ":attributeには、'true'か'false'を指定してください。",
-    'confirmed'            => ':attributeと:attribute確認が一致しません。',
+    'confirmed'            => 'パスワードの確認が一致しません。',
     'date'                 => ':attributeは、正しい日付ではありません。',
     'date_equals'          => ':attributeは:dateに等しい日付でなければなりません。',
     'date_format'          => ":attributeの形式は、':format'と合いません。",
@@ -131,10 +131,13 @@ return [
     */
 
 'attributes' => [
-    'address1' => '市区町村',
-    'address2' => '町名・番地',
-    'address3' => 'ビル・マンション名',
     'password' => 'パスワード',
+    'mail'=>'メールアドレス',
+    'username'=>'ユーザー名',
+    'bio'=>'投稿',
+    'file'=>'画像',
+    'password_confirmation'=>'パスワードの確認',
+    'newPost'=>'投稿',
 ],
 
     /*
@@ -148,6 +151,5 @@ return [
     |
     */
 
-    'attributes' => [],
 
 ];

@@ -38,7 +38,7 @@ header h1 {
 #row {
     display: flex;
     flex-flow: row wrap;
-    height: 1000px;
+    height: 642px;
 }
 
 #container {
@@ -173,7 +173,7 @@ hr {
 
 .article-day {
     position: absolute;
-    left: 65%;
+    left: 70%;
     font-size: 12px;
 }
 
@@ -190,8 +190,10 @@ hr {
 
 /*投稿編集ボタン*/
 .t-icon {
-    margin-left: auto;
     display: flex;
+    padding-left: 92%;
+    position: relative;
+    top: 15px;
 }
 
 .js-modal-open {
@@ -207,6 +209,8 @@ hr {
     transform: translate(-50%, -50%);
     display: block;
     transition: 0.3s;
+    padding-left: 15px;
+    padding-top: 28px;
 }
 
 .k-icon:active img:nth-of-type(2) {
@@ -350,10 +354,11 @@ hr {
 
 /*アイコン・アコーディオン*/
 .accordion {
-    position: relative;
+    position: absolute;
     display: flex;
     left: 80%;
-    bottom: 50px;
+    top: 20px;
+
 }
 
 .accordion-container {
@@ -427,8 +432,8 @@ hr {
 }
 
 .accordion-title p {
-    margin-top: 12px;
-    display: flex;
+    margin-top: 15px;
+    white-space: nowrap;
 }
 
 .accordion-title::after {

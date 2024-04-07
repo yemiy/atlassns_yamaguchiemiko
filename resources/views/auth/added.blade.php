@@ -5,7 +5,7 @@
 
 <div class="login-page3">
 <div id="clear">
-  <div class="log-title">  {{ session('username')}}さん
+  <div class="log-title3">  {{ session('username')}}さん
   <br><br>ようこそ！AtlasSNSへ！</div>
 
 

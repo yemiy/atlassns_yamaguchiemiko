@@ -65,6 +65,7 @@ $validated=$request->validate([
 
 ]);
 
+
 $username =$request->input('username');
 $mail=$request->input('mail');
 $password=$request->input('password');
@@ -83,7 +84,11 @@ return redirect('added')->with($input,'username');
     }
 
 
+
     public function added(){
         return view('auth.added');
     }
+
+
+
 }

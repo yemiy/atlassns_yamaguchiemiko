@@ -26,7 +26,7 @@ return view('posts.index',['posts'=>$posts,'users'=>$users]);
  public function create(Request $request){
 if($request->isMethod('post')){
 $request->validate([
-'newPost'=>'required|min:3|max:150'
+'newPost'=>'required|min:1|max:150'
 ]);
     $post=$request->newPost;
     $user_id=Auth::id();

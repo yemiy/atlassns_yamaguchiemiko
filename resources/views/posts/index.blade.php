@@ -22,11 +22,12 @@
   <img src="{{ asset('images/'.Auth::user()->images) }}" alt="フォローユーザーアイコン" class="follows-icon" >
 
   <input name="newPost" placeholder="投稿内容を入力してください。" required="true">
+       @if($errors->any())
+ <p class="error-mg">{{ $errors->first('newPost' )}}</p>
+@endif
  </div>
  <button type="submit" class="btn btn-post"><img src="images/post.png" ></button>
- @foreach($errors->all() as $error)
-   <li>{{ $error}}</li>
-@endforeach
+
 </div>
 {!! Form::close() !!}
 <hr class="hr1"><!--ページ内ボーダー線-->
@@ -47,7 +48,7 @@
   <!--更新-->
 <div class="t-icon">
   <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width=40 height=40></a>
-
+</div>
 <div class="k-icon">
   <!--削除-->
   <a class="delete"href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょか？')">
@@ -55,13 +56,18 @@
 <img src="./images/trash-h.png" alt="消去前のボタン" width=51 height=51>
 </a>
 </div>
-</div>
+
 <!--モーダル作成-->
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <form action="/post/update" method="post">
-      <textarea name="upPost" class="modal_post" ></textarea>
+      <textarea name="upPost" class="modal_post" ></textarea required="true">
+
+
+          @if($errors->any())
+ <p class="error-mg">{{ $errors->first('upPost')}}</p>
+@endif
       <input type="hidden" name="id" class="modal_id" value="" >
       <input type="submit" value="更新">
       {{ csrf_field() }}

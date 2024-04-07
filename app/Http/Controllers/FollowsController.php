@@ -14,19 +14,19 @@ class FollowsController extends Controller
     public function followList(){
         $following_id=Auth::user()->follows()->pluck('followed_id');
         $posts=Post::with('user')->whereIn('user_id',$following_id)->get();
-        $images = \DB::table('users')->get();
-        $images = auth()->user()->follows()->get();
-        return view('follows.followList',compact('posts'))->with(['images'=>$images,'following_id'=>$following_id]);
+        $users = \DB::table('users')->get();
+        $users= auth()->user()->follows()->get();
+        return view('follows.followList',compact('posts'))->with(['users'=>$users,'following_id'=>$following_id]);
     }
 
     public function followerList(){
         $followed_id = Auth::user()->follower()->pluck('following_id');
         $posts = Post::orderBy('updated_at','desc')->whereIn('user_id',$followed_id)->get();
 
-        $images=\DB::table('users')->get();
-        $images=auth()->user()->follower()->get();
+        $users=\DB::table('users')->get();
+        $users=auth()->user()->follower()->get();
 
-        return view('follows.followerList',compact('followed_id','posts'))->with(['images'=>$images]);
+        return view('follows.followerList',compact('followed_id','posts'))->with(['users'=>$users]);
     }
 
     //フォロー機能

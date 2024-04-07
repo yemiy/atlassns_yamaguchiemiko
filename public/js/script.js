@@ -14,6 +14,7 @@ $(function () {
     //取得した投稿idをモーダルの中身へ渡す
     $('.modal_id').val(post_id);
     return false;
+
   });
 
   //背景部分や閉じるボタン("js-modal-close")が押されたら作動

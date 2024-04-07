@@ -10,23 +10,33 @@
 
 <div class="log-title2">新規ユーザー登録</div>
 
-@if ($errors->any())
-@foreach($errors->all() as $error)
-{{$error}}
-@endforeach
-@endif
-
 <p>{{ Form::label('ユーザー名') }}<br>
-{{ Form::text('username',null,['class' => 'input']) }}</p>
+{{ Form::text('username',null,['class' => 'input']) }}
+ @if($errors->any())
+ <p class="error-mg">{{ $errors->first('username' )}}</p>
+@endif
+</p>
 
 <p>{{ Form::label('メールアドレス') }}<br>
-{{ Form::text('mail',null,['class' => 'input']) }}</p>
+{{ Form::text('mail',null,['class' => 'input']) }}
+ @if($errors->any())
+ <p class="error-mg">{{ $errors->first('mail' )}}</p>
+@endif
+</p>
 
 <p>{{ Form::label('パスワード') }}<br>
-{{ Form::password('password',null,['class' => 'input']) }}</p>
+{{ Form::password('password',null,['class' => 'input']) }}
+ @if($errors->any())
+ <p class="error-mg">{{ $errors->first('password' )}}</p>
+@endif
+</p>
 
 <p>{{ Form::label('パスワード確認') }}<br>
-{{ Form::password('password_confirmation',null,['class' => 'input']) }}</p>
+{{ Form::password('password_confirmation',null,['class' => 'input']) }}
+ @if($errors->any())
+ <p class="error-mg">{{ $errors->first('password_confirmation' )}}</p>
+@endif
+</p>
 
 
    <div class="log-ok2">
