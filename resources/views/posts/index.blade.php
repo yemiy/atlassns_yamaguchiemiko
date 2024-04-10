@@ -62,17 +62,20 @@
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <form action="/post/update" method="post">
-      <textarea name="upPost" class="modal_post" ></textarea required="true">
+      <textarea name="upPost" class="modal_post" required="true" ></textarea >
 
 
           @if($errors->any())
  <p class="error-mg">{{ $errors->first('upPost')}}</p>
 @endif
-      <input type="hidden" name="id" class="modal_id" value="" >
-      <input type="submit" value="更新">
+
+
+<br>
+       <button type="submit" class="modal_id" name="id"><img src="./images/edit.png" width=40 height=40></button>
+
       {{ csrf_field() }}
     </form>
-    <a class="js-modal-close" href="">閉じる</a>
+
   </div>
 </div>
 
