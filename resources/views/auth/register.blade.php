@@ -40,7 +40,7 @@
 
 
    <div class="log-ok2">
-     <button type="submit" class="">登録</button>
+     <button type="submit" class="">新規登録</button>
      </div><br><br>
 
 

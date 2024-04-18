@@ -48,7 +48,6 @@ header h1 {
 #side-bar {
     flex: 0 0 19%;
     border-left: 3px solid #727272;
-    height: 100%;
 }
 
 details {

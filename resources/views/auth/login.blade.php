@@ -25,7 +25,7 @@
     </div><br>
 
     <div class="log-ok">
-     <button type="submit" class="">LOGIN</button>
+     <button type="submit" class="">ログイン</button>
      </div><br><br>
 
 
