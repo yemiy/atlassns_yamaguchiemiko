@@ -108,7 +108,7 @@ details {
     border: none;
 }
 
-.post-form input {
+.post-form textarea {
     width: 75%;
     height: 80px;
     border: none;
@@ -137,38 +137,41 @@ hr {
 }
 
 
-.table-hover {
-    padding: 0 20px;
-}
-
-.icon2 {
+.index-post span img {
     width: 47px;
     height: 47px;
     border-radius: 50%;
-    display: block;
-    position: absolute;
-    left: 10%;
+    display: flex;
+    position: relative;
+    left: 150px;
 }
 
+.table-hover {}
+
+.article-item span {}
+
 .article-item {
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #0000ff;
     display: flex;
+
 }
 
 .article-title {
     position: absolute;
-    left: 14%;
+    left: 16%;
     font-size: 18px;
 }
 
 .article-post {
     position: absolute;
     left: 16%;
-    padding: 25 10px;
-    margin-top: 5px;
+    padding-top: 25px;
     font-size: 15px;
+    margin: 20px 0;
 }
+
 
 .article-day {
     position: absolute;
@@ -182,6 +185,8 @@ hr {
     left: 70%;
 }
 
+.index-post {}
+
 .contents img {
     height: 35px;
     width: 30px;
@@ -190,7 +195,7 @@ hr {
 /*投稿編集ボタン*/
 .t-icon {
     display: flex;
-    padding-left: 92%;
+    padding-left: 88%;
     position: relative;
     top: 15px;
 }

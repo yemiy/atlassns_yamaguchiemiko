@@ -21,8 +21,9 @@
  <div>
   <img src="{{ asset('images/'.Auth::user()->images) }}" alt="フォローユーザーアイコン" class="follows-icon" >
 
-  <input name="newPost" placeholder="投稿内容を入力してください。" required="true">
-       @if($errors->any())
+ <textarea name="newPost" placeholder="投稿内容を入力してください。" required="true"></textarea>
+
+@if($errors->any())
  <p class="error-mg">{{ $errors->first('newPost' )}}</p>
 @endif
  </div>
@@ -32,20 +33,22 @@
 {!! Form::close() !!}
 <hr class="hr1"><!--ページ内ボーダー線-->
 
+
+
+
 <div class="index-post">
-<h2 class="page-header"></h2>
-
-
 <main class="table-hover">
 @foreach($posts as $post)
-<article class="article-item">
 
+<div class="article-item">
  <span><img src="{{ asset('images/' .$post->user->images) }}" alt="フォローユーザーアイコン" class="icon2" ></span>
   <span class="article-title" >{{ $post->user->username }}</span>
-  <span class="article-post">{{ $post->post }}</span>
+  <span class="article-post">  {!! nl2br(e($post->post)) !!}</span>
   <span class="article-day">{{ $post->created_at }}</span>
 
-  <!--更新-->
+    <!--更新-->
+@if(Auth::user()->id == $post->user_id)
+
 <div class="t-icon">
   <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width=40 height=40></a>
 </div>
@@ -64,13 +67,9 @@
     <form action="/post/update" method="post">
       <textarea name="upPost" class="modal_post" required="true" ></textarea >
 
-
           @if($errors->any())
  <p class="error-mg">{{ $errors->first('upPost')}}</p>
 @endif
-
-
-<br>
        <button type="submit" class="modal_id" name="id"><img src="./images/edit.png" width=40 height=40></button>
 
       {{ csrf_field() }}
@@ -78,9 +77,13 @@
 
   </div>
 </div>
+@endif
 
-</article>
+
+</div>
   @endforeach
+
+
 </main>
 
 </div>

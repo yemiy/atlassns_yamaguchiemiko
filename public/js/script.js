@@ -53,3 +53,14 @@ $(function () {
   });
 });
 */
+
+/*
+document.addEventListener("keydown", function (event) {
+  // Enterキーが押された場合
+  if (event.key === "Enter") {
+    // デフォルトのフォーム送信をキャンセル
+    event.preventDefault();
+    // フォームのテキストエリアに改行を挿入
+    document.getElementById("post-form_input_user_id").value += "<br>";
+  }
+});*/
