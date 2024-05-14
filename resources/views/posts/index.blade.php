@@ -12,7 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
 
 <div class="post-form">
@@ -34,57 +33,55 @@
 <hr class="hr1"><!--ページ内ボーダー線-->
 
 
-
-
 <div class="index-post">
-<main class="table-hover">
+
 @foreach($posts as $post)
 
 <div class="article-item">
  <span><img src="{{ asset('images/' .$post->user->images) }}" alt="フォローユーザーアイコン" class="icon2" ></span>
   <span class="article-title" >{{ $post->user->username }}</span>
-  <span class="article-post">  {!! nl2br(e($post->post)) !!}</span>
+  <span class="article-post"> {!! nl2br(htmlspecialchars($post->post)) !!}</span>
   <span class="article-day">{{ $post->created_at }}</span>
 
     <!--更新-->
 @if(Auth::user()->id == $post->user_id)
-
-<div class="t-icon">
-  <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width=40 height=40></a>
-</div>
-<div class="k-icon">
+<ul>
+<di class="t-icon">
+  <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width=42 height=42></a>
+</di>
+<li class="k-icon">
   <!--削除-->
-  <a class="delete"href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょか？')">
-<img src="./images/trash.png" alt="削除後のボタン" width=38 height=38>
-<img src="./images/trash-h.png" alt="消去前のボタン" width=51 height=51>
+  <a href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょか？')">
+<img src="./images/trash.png" alt="削除後のボタン"  height=40 width=40>
+<img src="./images/trash-h.png" alt="消去前のボタン" width=43 heigh=43>
 </a>
-</div>
+</li>
 
 <!--モーダル作成-->
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <form action="/post/update" method="post">
-      <textarea name="upPost" class="modal_post" required="true" ></textarea >
+      <textarea name="upPost" class="modal_post" required="true" ></textarea ><br>
 
           @if($errors->any())
  <p class="error-mg">{{ $errors->first('upPost')}}</p>
+
+
 @endif
        <button type="submit" class="modal_id" name="id"><img src="./images/edit.png" width=40 height=40></button>
 
       {{ csrf_field() }}
     </form>
-
   </div>
+
 </div>
 @endif
+   </ul>
 
 
 </div>
   @endforeach
-
-
-</main>
 
 </div>
 @endsection

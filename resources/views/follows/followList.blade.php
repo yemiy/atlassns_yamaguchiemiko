@@ -21,7 +21,7 @@
 <a href="{{ route('followProfile',['id'=>$post->user_id])}}" ><img src="{{ asset('images/' .$post->user->images) }}" alt="フォローユーザーアイコン" class="follows-icon9"></a>
 
 <span class="article-title1">{{ $post->user->username }}</span>
-<span class="article-post1">{{ $post->post}}</span>
+<span class="article-post1"> {!! nl2br(htmlspecialchars($post->post)) !!}</span>
 <span class="article-day ">
   {{ $post->updated_at}}</span>
 </div>
