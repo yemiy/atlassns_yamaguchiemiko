@@ -18,26 +18,37 @@ public function profiledit(Request $request){
   $mail = $request->input('mail');
   $password =$request->input('password');
   $bio = $request->input('bio');
+  if ($request->hasFile('images')) {
+
 $images=$request->file('images');
+$filename=$images->getClientOriginalName();
+$path=$images->storeAs('images',$filename,'public');
+
+   \DB::table('users')
+  ->where('id',$id)
+  ->update([
+        'images' => $request->file('images')->getClientOriginalName(),
+  ]);        return redirect('/top');
+    } else {
+        // 画像ファイルがアップロードされていない場合の処理
+            return redirect('/top');
+
+    }
+
+
+
+
+
 
 $request->validate([
 'username'=>'required|min:2|max:12',
 'mail'=>'required|string|email|min:5|max:40',
 'bio'=>'max:150',
-'password'=>'required|alpha_num|min:8|max:20|confirmed',
-'password_confirmation'=>'required|alpha_num|min:8|max:20',
+//'password'=>'required|alpha_num|min:8|max:20|confirmed',
+//'password_confirmation'=>'required|alpha_num|min:8|max:20',
 'images'=>'image|mimes:jpeg,png,jpg,gif'
 ]);
 
-if($images !=null){
-   \DB::table('users')
-  ->where('id',$id)
-  ->update([
-        'images' => $request->file('images')->getClientOriginalName(),
-  ]);
-
-  return redirect('/top');
-}
 
  \DB::table('users')
   ->where('id',$id)

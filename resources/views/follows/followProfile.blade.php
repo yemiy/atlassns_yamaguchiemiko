@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="follow-list-pro">
-<p><img src="{{ asset('images/' .$user->images) }}" alt="フォローユーザーアイコン" class="follows-icon-p"></p>
+<p><img src="{{ asset('storage/images/' .$user->images) }}" alt="フォローユーザーアイコン" class="follows-icon-p"></p>
 <div class="pro">
 <p>name　　　　　　{{ $user->username }}</p>
 <p>bio　　　　　　　{{ $user->bio}}</p>
@@ -27,7 +27,7 @@
 
 @foreach($post as $post)
 <div class="follow-list2">
-<img src="{{ asset('images/' .$user->images) }}" alt="フォローユーザーアイコン" class="follows-icon9">
+<img src="{{ asset('storage/images/' .$user->images) }}" alt="フォローユーザーアイコン" class="follows-icon9">
 <span class="article-title1">{{ $post->user->username}}</span>
 <span class="article-post1">{{ $post->post}}</span>
 <span class="article-day">{{ $post->updated_at}}</span>

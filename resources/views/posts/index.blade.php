@@ -18,7 +18,7 @@
 {!! Form::open(['url'=>'/create','method'=>'Post']) !!}
 
  <div>
-  <img src="{{ asset('images/'.Auth::user()->images) }}" alt="フォローユーザーアイコン" class="follows-icon" >
+  <img src="{{ asset('storage/images/'.Auth::user()->images) }}" alt="フォローユーザーアイコン" class="follows-icon" >
 
  <textarea name="newPost" placeholder="投稿内容を入力してください。" required="true"></textarea>
 
@@ -31,24 +31,21 @@
 </div>
 {!! Form::close() !!}
 <hr class="hr1"><!--ページ内ボーダー線-->
-
-
 <div class="index-post">
 
 @foreach($posts as $post)
-
 <div class="article-item">
- <span><img src="{{ asset('images/' .$post->user->images) }}" alt="フォローユーザーアイコン" class="icon2" ></span>
+ <span><img src="{{ asset('storage/images/' .$post->user->images) }}" alt="フォローユーザーアイコン" class="icon2" ></span>
   <span class="article-title" >{{ $post->user->username }}</span>
-  <span class="article-post"> {!! nl2br(htmlspecialchars($post->post)) !!}</span>
+  <span class="article-post"> {{$post->post}}</span>
   <span class="article-day">{{ $post->created_at }}</span>
 
     <!--更新-->
 @if(Auth::user()->id == $post->user_id)
 <ul>
-<di class="t-icon">
+<div class="t-icon">
   <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="./images/edit.png" alt="編集" width=42 height=42></a>
-</di>
+</div>
 <li class="k-icon">
   <!--削除-->
   <a href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょか？')">
@@ -62,22 +59,21 @@
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <form action="/post/update" method="post">
-      <textarea name="upPost" class="modal_post" required="true" ></textarea ><br>
+      <textarea name="upPost" class="modal_post" required="true" ></textarea >
 
           @if($errors->any())
  <p class="error-mg">{{ $errors->first('upPost')}}</p>
 
-
+ </ul>
 @endif
        <button type="submit" class="modal_id" name="id"><img src="./images/edit.png" width=40 height=40></button>
 
       {{ csrf_field() }}
     </form>
-  </div>
 
+  </div>
 </div>
 @endif
-   </ul>
 
 
 </div>

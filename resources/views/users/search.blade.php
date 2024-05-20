@@ -13,7 +13,7 @@
 <form action="/search" method="post">
 @csrf
 <input type="text" name="keyword" placeholder="　ユーザー名" >
- <button type="submit" class="search-btn"><img src="images/search-icon.png" ></button>
+ <button type="submit" class="search-btn"><img src="storage/images/search-icon.png" ></button>
 <div class="keyword">
 @if(!empty($keyword))
 　　　　　　　　検索ワード：{{$keyword}}
@@ -30,7 +30,7 @@
 
    <div class="icon_header">
     <div>
-      <img src="images/{{$users->images}}" alt="icon" class="icon-space">
+      <img src="storage/images/{{$users->images}}" alt="icon" class="icon-space">
       <a href="{{ route('users.searchGet' ,$users) }}" ></a>
     </div>
       <div class="search_user_name"> {{$users->username}}</div>

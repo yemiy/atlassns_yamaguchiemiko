@@ -12,7 +12,7 @@
 <form action="{{url('/profile')}}" method="POST" enctype="multipart/form-data">
 @csrf
 <div class="form-group3">
-  <div class="profile-icon"><img width="32" src="{{ asset('images/'.Auth::user()->images ) }}"></div>
+  <div class="profile-icon"><img width="32" src="{{ asset('storage/images/'.Auth::user()->images ) }}"></div>
   <?php $users=Auth::user(); ?>
 
     <div class="form-group mb-3">
