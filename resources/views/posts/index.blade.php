@@ -37,7 +37,7 @@
 <div class="article-item">
  <span><img src="{{ asset('storage/images/' .$post->user->images) }}" alt="フォローユーザーアイコン" class="icon2" ></span>
   <span class="article-title" >{{ $post->user->username }}</span>
-  <span class="article-post"> {{$post->post}}</span>
+  <span class="article-post">  {!! nl2br(htmlspecialchars($post->post)) !!}</span>
   <span class="article-day">{{ $post->created_at }}</span>
 
     <!--更新-->
