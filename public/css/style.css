@@ -389,7 +389,8 @@ hr {
 
 .accordion-content {
     display: none;
-    padding: 40px 5px 0 0;
+    padding-top: 40px;
+    margin-right: 0;
 }
 
 .accordion-content li {
@@ -442,6 +443,10 @@ hr {
 .accordion-title p {
     margin-top: 15px;
     white-space: nowrap;
+    position: relative;
+    display: block;
+    right: 45%;
+
 }
 
 .accordion-title::after {
@@ -450,7 +455,6 @@ hr {
     content: "";
     display: block;
     position: absolute;
-    right: 25px;
     top: 38%;
     transform: rotate(135deg);
     transition: transform .3s ease-in-out, top .3s ease-in-out;

@@ -33,7 +33,8 @@
   <div class="accordion-container">
     <div class="accordion-item">
 
-       <div class="accordion-title js-accordion-title"><p>{{ Auth::user()->username}}　さん</p>
+       <div class="accordion-title js-accordion-title">
+        <p>{{ Auth::user()->username}}　さん</p>
        <img src="{{ asset('storage/images/'.Auth::user()->images) }}" class="icon3" ></div>
 
 
