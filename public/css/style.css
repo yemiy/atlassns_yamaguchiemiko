@@ -201,24 +201,34 @@ hr {
 
 .k-icon {
     position: relative;
-    backface-visibility: hidden;
 }
 
-.k-icon img {
+.img-d1,
+.img-d2 {
     position: absolute;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: inline-block;
     right: 0px;
-    padding-bottom: 1.5%;
+    padding-bottom: 1.8%;
     border-radius: 5px;
 }
 
+.img-d1 {
+    opacity: 1;
+}
 
-.k-icon :hover img::after {
-    content: url('./images/trash-h.png');
-    display: inline-block;
-    position: absolute;
+.img-d2 {
+    opacity: 0;
+}
+
+/* hover時に画像を非表示にし、アイコンを表示する */
+.k-icon:hover .img-d1 {
+    opacity: 0;
+}
+
+.k-icon:hover .img-d2 {
+    opacity: 1;
 }
 
 .modal__content button {

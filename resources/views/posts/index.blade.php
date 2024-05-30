@@ -50,8 +50,8 @@
   <!--削除-->
   <a href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょか？')">
 
-<img src="./images/trash.png" alt="削除前のボタン"  height=45 width=45>
-
+<img src="./images/trash.png" alt="削除前のボタン"  height=45 width=45 class="img-d1">
+<img src="./images/trash-h.png" alt="削除後のボタン"  height=45 width=45 class="img-d2">
 </a>
 </li>
 
