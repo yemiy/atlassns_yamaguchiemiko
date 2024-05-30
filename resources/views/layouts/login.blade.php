@@ -58,7 +58,7 @@
                 <p>{{ Auth::user()->username}}さんの</p>
                 <p>フォロー数
                 {{ Auth::user()->follows()->count() }}名</p>
-                <div class="row-btn"><a href="/follow-list">、<span style="color:white">フォローリスト</span></a></div>
+                <div class="row-btn"><a href="/follow-list"><span style="color:white">フォローリスト</span></a></div>
                 <p>フォロワー数
                 {{ Auth::user()->follower()->count() }}名</p>
                 <div class="row-btn"><a href="/follower-list" ><span style="color:white">フォロワーリスト</span></a></div>

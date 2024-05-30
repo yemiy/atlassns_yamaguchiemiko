@@ -18,12 +18,23 @@ public function profiledit(Request $request){
   $mail = $request->input('mail');
   $password =$request->input('password');
   $bio = $request->input('bio');
-  if ($request->hasFile('images')) {
 
+
+ \DB::table('users')
+  ->where('id',$id)
+  ->update([
+    'username' => $username,
+    'mail' => $mail,
+    'password' =>bcrypt($password),
+    'bio' => $bio,
+  ]);
+
+
+
+  if ($request->hasFile('images')) {
 $images=$request->file('images');
 $filename=$images->getClientOriginalName();
 $path=$images->storeAs('images',$filename,'public');
-
    \DB::table('users')
   ->where('id',$id)
   ->update([
@@ -32,7 +43,6 @@ $path=$images->storeAs('images',$filename,'public');
     } else {
         // 画像ファイルがアップロードされていない場合の処理
             return redirect('/top');
-
     }
 
 
@@ -49,15 +59,6 @@ $request->validate([
 'images'=>'image|mimes:jpeg,png,jpg,gif'
 ]);
 
-
- \DB::table('users')
-  ->where('id',$id)
-  ->update([
-    'username' => $username,
-    'mail' => $mail,
-    'password' =>bcrypt($password),
-    'bio' => $bio,
-  ]);
 
   return redirect('/top');
 }

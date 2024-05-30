@@ -215,10 +215,11 @@ hr {
 }
 
 
-.k-icon:hover img:nth-of-type(2) {
-    opacity: 0;
+.k-icon :hover img::after {
+    content: url('./images/trash-h.png');
+    display: inline-block;
+    position: absolute;
 }
-
 
 .modal__content button {
     border: none;
