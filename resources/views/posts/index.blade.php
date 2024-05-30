@@ -67,6 +67,7 @@
 
  </ul>
 @endif
+<br>
        <button type="submit" class="modal_id" name="id"><img src="./images/edit.png" width=40 height=40></button>
 
       {{ csrf_field() }}

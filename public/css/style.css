@@ -401,14 +401,14 @@ hr {
 .accordion-content {
     display: none;
     padding-top: 40px;
-    margin-right: 0;
+    right: 0;
 }
 
 .accordion-content li {
     line-height: 1.5;
     position: relative;
     border: 1px solid #333;
-    width: 315px;
+    width: 305px;
     height: 90px;
     background-color: #fff;
     font-family: monospace;
@@ -477,6 +477,7 @@ hr {
 .accordion-title.open::after {
     top: 45%;
     transform: rotate(-45deg);
+    position: absolute;
 }
 
 .my-user img {
