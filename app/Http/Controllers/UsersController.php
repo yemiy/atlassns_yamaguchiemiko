@@ -54,8 +54,8 @@ $request->validate([
 'username'=>'required|min:2|max:12',
 'mail'=>'required|string|email|min:5|max:40',
 'bio'=>'max:150',
-//'password'=>'required|alpha_num|min:8|max:20|confirmed',
-//'password_confirmation'=>'required|alpha_num|min:8|max:20',
+'password'=>'required|alpha_num|min:8|max:20|confirmed',
+'password_confirmation'=>'required|alpha_num|min:8|max:20',
 'images'=>'image|mimes:jpeg,png,jpg,gif'
 ]);
 
