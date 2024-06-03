@@ -400,7 +400,7 @@ hr {
 
 .accordion-content {
     display: none;
-    padding-top: 40px;
+    margin-top: 75px;
     right: 0;
 }
 
@@ -432,14 +432,6 @@ hr {
     color: #fff;
 }
 
-/* コンテンツボックスの枠線
-.accordion-item:nth-of-type .accordion-content {
-    border-bottom: 2px solid #7f7fff;
-    border-left: 2px solid #7f7fff;
-    border-right: 2px solid #7f7fff;
-}
-*/
-/* 矢印 */
 
 
 .accordion-title {
@@ -447,14 +439,14 @@ hr {
     color: #fff;
     cursor: pointer;
     font-size: 20px;
-    display: flex;
+    display: inline-block;
 
 }
 
 .accordion-title p {
     margin-top: 15px;
     white-space: nowrap;
-    position: relative;
+    position: absolute;
     display: block;
     right: 45%;
 
@@ -466,12 +458,12 @@ hr {
     content: "";
     display: block;
     position: absolute;
-    top: 38%;
     transform: rotate(135deg);
     transition: transform .3s ease-in-out, top .3s ease-in-out;
     width: 12px;
     height: 12px;
-    left: 160px;
+    left: 130px;
+    margin-top: 10px;
 }
 
 .accordion-title.open::after {
