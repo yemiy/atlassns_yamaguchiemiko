@@ -13,6 +13,17 @@ public function profile(Request $request){
  }
 
 public function profiledit(Request $request){
+
+  $request->validate([
+'username'=>'required|min:2|max:12',
+'mail'=>'required|string|email|min:5|max:40',
+'bio'=>'max:150',
+'password'=>'required|alpha_num|min:8|max:20|confirmed',
+'password_confirmation'=>'required|alpha_num|min:8|max:20',
+'images'=>'image|mimes:jpeg,png,jpg,gif'
+]);
+
+
   $id = Auth::id();
   $username = $request->input('username');
   $mail = $request->input('mail');
@@ -50,14 +61,6 @@ $path=$images->storeAs('images',$filename,'public');
 
 
 
-$request->validate([
-'username'=>'required|min:2|max:12',
-'mail'=>'required|string|email|min:5|max:40',
-'bio'=>'max:150',
-'password'=>'required|alpha_num|min:8|max:20|confirmed',
-'password_confirmation'=>'required|alpha_num|min:8|max:20',
-'images'=>'image|mimes:jpeg,png,jpg,gif'
-]);
 
 
   return redirect('/top');
