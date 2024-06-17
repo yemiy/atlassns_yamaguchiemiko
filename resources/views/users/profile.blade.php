@@ -16,7 +16,7 @@
   <?php $users=Auth::user(); ?>
 
     <div class="form-group mb-3">
-      <label for="subject"> user name </label>
+      <label for="subject"> ユーザー名</label>
       <input type="text" name="username" value="{{ Auth::user()->username}}">
       @if($errors->any())
  <p class="error-mg">{{ $errors->first('username' )}}</p>
@@ -49,7 +49,7 @@
     </div><br>
 
      <div class="form-group mb-3">
-      <label for="subject"> bio </label>
+      <label for="subject"> 自己紹介 </label>
       <input type="text" name="bio" value="{{ Auth::user()->bio}}">
             @if($errors->any())
  <p class="error-mg">{{ $errors->first('bio' )}}</p>
@@ -57,7 +57,7 @@
     </div><br>
 
     <div class="form-group mb-3">
-      <label for="subject"> icon image </label>
+      <label for="subject"> アイコン画像 </label>
       <input type="file" name="images" value="">
             @if($errors->any())
  <p class="error-mg">{{ $errors->first('file' )}}</p>
