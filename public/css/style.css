@@ -493,9 +493,14 @@ hr {
 /*↑投稿ページアイコン・*/
 .follow-list {
     display: flex;
-    flex-flow: row wrap;
-    vertical-align: middle;
+    flex-wrap: wrap;
+    width: 450px;
+    padding-left: 10%;
+    gap: 25px;
 }
+
+.follow-list a {}
+
 
 .follows-icon9 {
     margin-left: 93px;
@@ -512,15 +517,13 @@ hr {
     border-bottom: 1px solid #ddd;
 }
 
-.follow-list p {
-    margin: 85px 10px;
-    vertical-align: middle;
-}
 
-.follow-list h1 {
+.f-title {
     font-family: sans-serif;
     font-size: 25px;
     padding: 35px 95px;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .follows-icon-f {

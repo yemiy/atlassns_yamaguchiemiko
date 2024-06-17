@@ -2,16 +2,17 @@
 @section('content')
 
 <!--フォローユーザーのつぶやき-->
-<div class="follow-list">
+<div class="f-title">
 <h1>Follow List</h1>
+
+<div class="follow-list">
 <!--フォロワーのアイコン表示-->
 @foreach($users as $user)
-<p>
-<a href=" {{ route('followProfile',['id' =>$user->id])}}"> <img src="{{ asset('storage/images/' .$user->images) }}" class="follows-icon-f"></a></p>
+<a href=" {{ route('followProfile',['id' =>$user->id])}}"> <img src="{{ asset('storage/images/' .$user->images) }}" class="follows-icon-f"></a>
 
 @endforeach
+</div></div>
 
-</div>
 <hr class="hr1">
 
 <div class="followsList">
